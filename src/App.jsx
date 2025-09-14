@@ -1,16 +1,26 @@
 import { useState } from 'react'
 import CardList from './components/CardList'
+import SearchBox from "./components/SearchBox";
 import { cats as initialCats } from './cats'
-import './App.css'
+import './styles/App.css'
 
 function App() {
-  const [cats, setCats] = useState(initialCats);
+  const [searchField, setSearchField] = useState("");
+  
+  const onSearchChange = (event) => {
+    setSearchField(event.target.value);
+  }
+
+  const filteredCats = initialCats.filter(cat => {
+    return cat.name.toLowerCase().includes(searchField.toLowerCase());
+  });
   
   return (
-    <>
+    <div className='app'>
       <h1>Presidential Cats</h1>
-      <CardList cats={cats}/>
-    </>
+      <SearchBox searchChange={onSearchChange} />
+      <CardList cats={filteredCats}/>
+    </div>
   )
 }
 

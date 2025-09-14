@@ -1,5 +1,5 @@
-import React from "react";
 import Card from "./Card";
+import '../styles/CardList.css'
 
 export default function CardList({cats}) {
   const cards = cats.map(cat => {
@@ -13,5 +13,9 @@ export default function CardList({cats}) {
     );
   });
 
-  return (<>{cards}</>);
+  return (
+    <div className="card-list">
+      {cards}
+    </div>
+  );
 }
