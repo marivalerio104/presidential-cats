@@ -1,12 +1,15 @@
 import { useState } from 'react'
-import Card from './components/Card'
+import CardList from './components/CardList'
+import { cats as initialCats } from './cats'
 import './App.css'
 
 function App() {
+  const [cats, setCats] = useState(initialCats);
+  
   return (
     <>
       <h1>Presidential Cats</h1>
-      <Card name="Hola" term="2024"/>
+      <CardList cats={cats}/>
     </>
   )
 }
