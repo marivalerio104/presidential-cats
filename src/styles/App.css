@@ -1,5 +1,20 @@
 .app {
   display: flex;
-  flex-direction: column; /* stack children vertically */
+  flex-direction: column;
   align-items: center; 
+  height: 100vh;
+  margin: 0;
+}
+
+h1 {
+  color: aliceblue;
+  font-size: 40px;
+}
+
+h2 {
+  max-width: 290px;
+}
+
+.scroll {
+  overflow-y: auto; 
 }

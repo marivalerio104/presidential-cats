@@ -1,7 +1,6 @@
 :root {
   font-family: system-ui, Avenir, Helvetica, Arial, sans-serif;
   text-align: center;
-  padding: 1.5rem;
   background: linear-gradient(to right, rgb(0, 219, 175), rgb(183, 0, 219));
 
   font-synthesis: none;

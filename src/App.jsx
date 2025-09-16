@@ -4,13 +4,14 @@ import SearchBox from "./components/SearchBox";
 import { cats as initialCats } from './cats'
 import './styles/App.css'
 
-function App() {
+export default function App() {
   const [searchField, setSearchField] = useState("");
   
   const onSearchChange = (event) => {
     setSearchField(event.target.value);
   }
 
+  // Filtered cats based on the search field
   const filteredCats = initialCats.filter(cat => {
     return cat.name.toLowerCase().includes(searchField.toLowerCase());
   });
@@ -19,9 +20,9 @@ function App() {
     <div className='app'>
       <h1>Presidential Cats</h1>
       <SearchBox searchChange={onSearchChange} />
-      <CardList cats={filteredCats}/>
+      <div className='scroll'>
+        <CardList cats={filteredCats}/>
+      </div>
     </div>
   )
 }
-
-export default App
